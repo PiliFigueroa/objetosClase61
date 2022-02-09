@@ -68,6 +68,11 @@ const challenges = { EASY: 3, MEDIUM: 4, HARD: 2 };
 // getXP(challenges, score); // returns 430 (3 * 10 + 4 * 50 + 2 * 100)
 // ```
 
+// const { EASY, MEDIUM, HARD } = score
+// console.log("medium: ", MEDIUM)
+// console.log("easy: ", EASY)
+// console.log("hard: ", HARD)
+
 const getXP = (challenges, score) => {
     let suma = 0
     for (let prop in challenges) {
@@ -209,26 +214,27 @@ const getId = (id) => document.getElementById(id)
 // console.log(getId("card"))
 
 personajes.map(personaje => {
+    const { name, status, species, gender, image } = personaje
     getId("card").innerHTML += `
         <div class="card-image">
             <figure class="image is-4by3">
-                <img src="${personaje.image}" alt="Imagen de ${personaje.name}" id="imagen">
+                <img src="${image}" alt="Imagen de ${name}" id="imagen">
             </figure>
         </div>
         <div class="card-content">
             <div class="media">
             <div class="media-content">
-                <p class="title is-4" id="nombre">${personaje.name}</p>
+                <p class="title is-4" id="nombre">${name}</p>
             </div>
         </div>
     
         <div class="content">
             <strong>Status: </strong>
-            <p id="dato-1">${personaje.status}</p>
+            <p id="dato-1">${status}</p>
             <strong>Species: </strong>
-            <p id="dato-2">${personaje.species}</p>
+            <p id="dato-2">${species}</p>
             <strong>Genero: </strong>
-            <p id="dato-3">${personaje.gender}</p>
+            <p id="dato-3">${gender}</p>
             </div>
         </div>
     `
