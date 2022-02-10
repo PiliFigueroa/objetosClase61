@@ -202,18 +202,33 @@ const personajes = [
     }
 ]
 
+const rick = {
+    id: 1,
+    name:"Rick Sanchez",
+    status:"Alive",
+    species:"Human",
+    gender:"Male",
+    image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+    origin: {
+        name: "Planet Earth C-127",
+        url: "asdasdasdas.com"
+    }
+}
+
 const getId = (id) => document.getElementById(id)
 
-// getId("imagen").src = rick.img
-// getId("nombre").innerText = rick.name
-// getId("dato-1").innerText = rick.status
-// getId("dato-2").innerText = rick.species
-// getId("dato-3").innerText = rick.gender
-// getId("dato-4").innerText = rick.origin.name
+// const { image, name, status, species, gender, origin } = rick
+
+// getId("imagen").src = image
+// getId("nombre").innerText = name
+// getId("dato-1").innerText = status
+// getId("dato-2").innerText = species
+// getId("dato-3").innerText = gender
+// getId("dato-4").innerText = origin.name
 
 // console.log(getId("card"))
 
-personajes.map(personaje => {
+personajes.forEach(personaje => {
     const { name, status, species, gender, image } = personaje
     getId("card").innerHTML += `
         <div class="card-image">
